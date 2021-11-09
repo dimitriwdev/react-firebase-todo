@@ -24,4 +24,3 @@ yarn-error.log*
 
 # key
 .env
-src/config.js
