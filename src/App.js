@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { FirebaseDatabaseProvider } from '@react-firebase/database';
+import { firebaseConfig } from './config'
+import firebase from 'firebase';
+import { FirebaseAuthProvider, IfFirebaseAuthed, IfFirebaseUnAuthed } from '@react-firebase/auth';
+import AuthForm from './components/AuthForm';
+import TaskManager from './components/TaskManager';
 
-function App() {
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FirebaseAuthProvider {...firebaseConfig} firebase={firebase}>
+      <FirebaseDatabaseProvider {...firebaseConfig} firebase={firebase}>
+        <div className="app">
+          <h1>React Firebase</h1>
+          <IfFirebaseUnAuthed>
+            <AuthForm type='register' />
+            <AuthForm type='login' />
+          </IfFirebaseUnAuthed>
+          <IfFirebaseAuthed>
+            <TaskManager />
+          </IfFirebaseAuthed>
+        </div>
+      </FirebaseDatabaseProvider>
+    </FirebaseAuthProvider>
   );
 }
 

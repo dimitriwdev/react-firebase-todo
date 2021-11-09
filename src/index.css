@@ -1,3 +1,9 @@
+* {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +13,66 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(#5f72be, #9921e8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.authForm {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+}
+
+h3 {
+margin: 0;
+}
+
+label {
+  margin: 15px 0 10px 0;
+}
+
+input {
+  height: 40px;
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.createForm {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.reader {
+  width: 50%;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  color: #fff;
+  cursor: pointer;
 }
